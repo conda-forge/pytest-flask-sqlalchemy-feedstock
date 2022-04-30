@@ -1,5 +1,5 @@
 {% set name = "pytest-flask-sqlalchemy" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 34fa0f9a63c3892f54a8d11ab67f907c0e0911ac609e3cff5d518c3af6b897cd
+  sha256: db71a57b90435e5d854b21c37a2584056d6fc3ddb28c09d8d0a2546bd6e390ff
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A pytest plugin for preserving test isolation in Flask-SQLAlchemy using database transactions.'
+  summary: A pytest plugin for preserving test isolation in Flask-SQLAlchemy using database transactions.
   description: |
     pytest-flask-sqlalchemy is a simple pytest plugin for use with tests that need a databse conection, with it can
     acess the database to do the tests without problems with trash data and other problems that can be happened.
